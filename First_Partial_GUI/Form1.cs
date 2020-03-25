@@ -16,5 +16,25 @@ namespace First_Partial_GUI
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            lblWelcome.Focus();
+        }
+
+        private void bttnTheory_Click(object sender, EventArgs e)
+        {
+            lblWelcome.Focus();
+        }
+
+        private void bttnExercises_Click(object sender, EventArgs e)
+        {
+            lblWelcome.Focus();
+        }
+
+        private void Form1_Click(object sender, EventArgs e)
+        {
+            lblWelcome.Focus();            
+        }
     }
 }
