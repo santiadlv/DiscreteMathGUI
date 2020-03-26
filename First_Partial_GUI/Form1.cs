@@ -30,11 +30,18 @@ namespace First_Partial_GUI
         private void bttnExercises_Click(object sender, EventArgs e)
         {
             lblWelcome.Focus();
+            getImages();
         }
 
         private void Form1_Click(object sender, EventArgs e)
         {
             lblWelcome.Focus();            
+        }
+
+        private void getImages()
+        {
+            var slide1 = Properties.Resources.img3;
+            pictureBox1.Image = slide1;
         }
     }
 }
