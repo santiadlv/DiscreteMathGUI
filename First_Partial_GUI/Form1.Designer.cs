@@ -34,9 +34,7 @@
             this.txtWelcome = new System.Windows.Forms.TextBox();
             this.bttnTheory = new System.Windows.Forms.Button();
             this.bttnExercises = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblWelcome
@@ -100,21 +98,11 @@
             this.bttnExercises.UseVisualStyleBackColor = true;
             this.bttnExercises.Click += new System.EventHandler(this.bttnExercises_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(804, 43);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(282, 257);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1132, 633);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.bttnExercises);
             this.Controls.Add(this.bttnTheory);
             this.Controls.Add(this.txtWelcome);
@@ -127,11 +115,10 @@
             this.MinimumSize = new System.Drawing.Size(1150, 680);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TECHNION - Discrete Math GUI";
+            this.Text = "TECHNION - Discrete Mathematics GUI";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Click += new System.EventHandler(this.Form1_Click);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,7 +130,6 @@
         private System.Windows.Forms.TextBox txtWelcome;
         private System.Windows.Forms.Button bttnTheory;
         private System.Windows.Forms.Button bttnExercises;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

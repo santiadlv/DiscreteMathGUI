@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using First_Partial_GUI.Classes;
 
 namespace First_Partial_GUI
 {
@@ -24,24 +25,21 @@ namespace First_Partial_GUI
 
         private void bttnTheory_Click(object sender, EventArgs e)
         {
-            lblWelcome.Focus();
+            this.Hide();
+            Form2 frm2 = new Form2();
+            frm2.Closed += (s, args) => this.Close();
+            GC.Collect();
+            frm2.Show();
         }
 
         private void bttnExercises_Click(object sender, EventArgs e)
         {
             lblWelcome.Focus();
-            getImages();
         }
 
         private void Form1_Click(object sender, EventArgs e)
         {
             lblWelcome.Focus();            
-        }
-
-        private void getImages()
-        {
-            var slide1 = Properties.Resources.img3;
-            pictureBox1.Image = slide1;
         }
     }
 }

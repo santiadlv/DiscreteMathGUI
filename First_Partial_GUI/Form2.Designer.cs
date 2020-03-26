@@ -29,43 +29,66 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtInstructions = new System.Windows.Forms.TextBox();
-            this.bttnTopic1 = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.imgSlides = new System.Windows.Forms.PictureBox();
+            this.bttnBack = new System.Windows.Forms.Button();
+            this.bttnNext = new System.Windows.Forms.Button();
+            this.bttnPrevious = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.imgSlides)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(102, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 65);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "TEORÍA";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Bahnschrift", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(130, 9);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(153, 48);
+            this.lblTitle.TabIndex = 5;
+            this.lblTitle.Text = "TEORÍA";
             // 
-            // txtInstructions
+            // imgSlides
             // 
-            this.txtInstructions.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInstructions.Location = new System.Drawing.Point(113, 135);
-            this.txtInstructions.Multiline = true;
-            this.txtInstructions.Name = "txtInstructions";
-            this.txtInstructions.ReadOnly = true;
-            this.txtInstructions.Size = new System.Drawing.Size(845, 69);
-            this.txtInstructions.TabIndex = 6;
-            this.txtInstructions.TabStop = false;
-            this.txtInstructions.Text = "A continuación se muestran todos los temas vistos hasta ahora en el semestre. \r\nE" +
-    "lija alguno para ver más acerca de él.";
+            this.imgSlides.Location = new System.Drawing.Point(28, 62);
+            this.imgSlides.MaximumSize = new System.Drawing.Size(1075, 520);
+            this.imgSlides.Name = "imgSlides";
+            this.imgSlides.Size = new System.Drawing.Size(1075, 520);
+            this.imgSlides.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgSlides.TabIndex = 6;
+            this.imgSlides.TabStop = false;
+            this.imgSlides.Click += new System.EventHandler(this.imgSlides_Click);
             // 
-            // bttnTopic1
+            // bttnBack
             // 
-            this.bttnTopic1.Location = new System.Drawing.Point(113, 229);
-            this.bttnTopic1.Name = "bttnTopic1";
-            this.bttnTopic1.Size = new System.Drawing.Size(232, 148);
-            this.bttnTopic1.TabIndex = 7;
-            this.bttnTopic1.Text = "Conceptos Básicos";
-            this.bttnTopic1.UseVisualStyleBackColor = true;
+            this.bttnBack.Location = new System.Drawing.Point(28, 20);
+            this.bttnBack.Name = "bttnBack";
+            this.bttnBack.Size = new System.Drawing.Size(96, 29);
+            this.bttnBack.TabIndex = 7;
+            this.bttnBack.TabStop = false;
+            this.bttnBack.Text = "← Regresar";
+            this.bttnBack.UseVisualStyleBackColor = true;
+            this.bttnBack.Click += new System.EventHandler(this.bttnBack_Click);
+            // 
+            // bttnNext
+            // 
+            this.bttnNext.Location = new System.Drawing.Point(577, 588);
+            this.bttnNext.Name = "bttnNext";
+            this.bttnNext.Size = new System.Drawing.Size(198, 36);
+            this.bttnNext.TabIndex = 8;
+            this.bttnNext.Text = "Siguiente → ";
+            this.bttnNext.UseVisualStyleBackColor = true;
+            this.bttnNext.Click += new System.EventHandler(this.bttnNext_Click);
+            // 
+            // bttnPrevious
+            // 
+            this.bttnPrevious.Enabled = false;
+            this.bttnPrevious.Location = new System.Drawing.Point(373, 588);
+            this.bttnPrevious.Name = "bttnPrevious";
+            this.bttnPrevious.Size = new System.Drawing.Size(198, 36);
+            this.bttnPrevious.TabIndex = 9;
+            this.bttnPrevious.Text = "← Anterior";
+            this.bttnPrevious.UseVisualStyleBackColor = true;
+            this.bttnPrevious.Click += new System.EventHandler(this.bttnPrevious_Click);
             // 
             // Form2
             // 
@@ -73,9 +96,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1132, 633);
-            this.Controls.Add(this.bttnTopic1);
-            this.Controls.Add(this.txtInstructions);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.bttnPrevious);
+            this.Controls.Add(this.bttnNext);
+            this.Controls.Add(this.bttnBack);
+            this.Controls.Add(this.imgSlides);
+            this.Controls.Add(this.lblTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -83,16 +108,19 @@
             this.MinimumSize = new System.Drawing.Size(1150, 680);
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TECHNION - Discrete Math GUI";
+            this.Text = "TECHNION - Discrete Mathematics GUI";
             this.Load += new System.EventHandler(this.Form2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.imgSlides)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtInstructions;
-        private System.Windows.Forms.Button bttnTopic1;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.PictureBox imgSlides;
+        private System.Windows.Forms.Button bttnBack;
+        private System.Windows.Forms.Button bttnNext;
+        private System.Windows.Forms.Button bttnPrevious;
     }
 }
