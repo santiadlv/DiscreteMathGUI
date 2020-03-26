@@ -34,7 +34,11 @@ namespace First_Partial_GUI
 
         private void bttnExercises_Click(object sender, EventArgs e)
         {
-            lblWelcome.Focus();
+            this.Hide();
+            Form3 frm3 = new Form3();
+            frm3.Closed += (s, args) => this.Close();
+            GC.Collect();
+            frm3.Show();
         }
 
         private void Form1_Click(object sender, EventArgs e)

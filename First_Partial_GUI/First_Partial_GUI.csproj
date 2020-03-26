@@ -99,7 +99,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Slide8.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <COMReference Include="AcroPDFLib">
       <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
@@ -139,6 +141,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Slide7.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Slide9.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Slide10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Slide11.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Slide12.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
