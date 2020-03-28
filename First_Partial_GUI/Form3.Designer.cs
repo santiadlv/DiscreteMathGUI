@@ -59,7 +59,7 @@
             this.lblTitle.Font = new System.Drawing.Font("Bahnschrift", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(130, 10);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(294, 60);
+            this.lblTitle.Size = new System.Drawing.Size(235, 48);
             this.lblTitle.TabIndex = 9;
             this.lblTitle.Text = "EJERCICIOS";
             // 
@@ -120,7 +120,7 @@
             this.lblChoose.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChoose.Location = new System.Drawing.Point(775, 182);
             this.lblChoose.Name = "lblChoose";
-            this.lblChoose.Size = new System.Drawing.Size(344, 30);
+            this.lblChoose.Size = new System.Drawing.Size(275, 24);
             this.lblChoose.TabIndex = 15;
             this.lblChoose.Text = "Escoja la respuesta correcta:";
             // 
@@ -161,8 +161,8 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.bttnBack);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1150, 680);
-            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1150, 680);
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
