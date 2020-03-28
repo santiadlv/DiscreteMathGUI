@@ -14,6 +14,7 @@ namespace First_Partial_GUI
     public partial class Form3 : Form
     {
         public static int probIndex;
+        public static string msgBoxName = "TECHNION - Retroalimentación de ejercicios";
 
         public Form3()
         {
@@ -63,22 +64,20 @@ namespace First_Partial_GUI
         {
             chooseArray();
             GlobalVar.getCorrectAnswers();
+            GlobalVar.getTopics();
             GlobalVar.checkAnswers(GlobalVar.ans_1, GlobalVar.correctAnswers_1);
             GlobalVar.checkAnswers(GlobalVar.ans_2, GlobalVar.correctAnswers_2);
             GlobalVar.checkAnswers(GlobalVar.ans_3, GlobalVar.correctAnswers_3);
             GlobalVar.checkAnswers(GlobalVar.ans_4, GlobalVar.correctAnswers_4);
             GlobalVar.checkAnswers(GlobalVar.ans_5, GlobalVar.correctAnswers_5);
-            MessageBox.Show(GlobalVar.giveResults());
+
+            string msgBoxTxt = GlobalVar.giveResults() + GlobalVar.suggestTopics();
+            MessageBox.Show(msgBoxTxt, msgBoxName, MessageBoxButtons.OK);
             bttnCheck.Enabled = false;
         }
 
         private void saveAnswers(bool[] arr)
         {
-            //GlobalVar.ans_A[probIndex] = rbA.Checked;
-            //GlobalVar.ans_B[probIndex] = rbB.Checked;
-            //GlobalVar.ans_C[probIndex] = rbC.Checked;
-            //GlobalVar.ans_D[probIndex] = rbD.Checked;
-
             arr[0] = rbA.Checked;
             arr[1] = rbB.Checked;
             arr[2] = rbC.Checked;

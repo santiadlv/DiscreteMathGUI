@@ -12,6 +12,7 @@ namespace First_Partial_GUI.Classes
     {
         public static Image[] slides = new Image[7];
         public static Image[] problems = new Image[5];
+        public static string[] topics = new string[5];
 
         public static bool[] correctAnswers_1 = new bool[4];
         public static bool[] correctAnswers_2 = new bool[4];
@@ -47,6 +48,15 @@ namespace First_Partial_GUI.Classes
             problems[2] = Properties.Resources.prob3;
             problems[3] = Properties.Resources.prob4;
             problems[4] = Properties.Resources.prob5;
+        }
+
+        public static void getTopics()
+        {
+            topics[0] = "'Simplificaciones'";
+            topics[1] = "'Condicional'";
+            topics[2] = "'Argumentos'";
+            topics[3] = "'Reglas de inferencia'";
+            topics[4] = "'Variantes de la condicional'";
         }
 
         public static void getCorrectAnswers()
@@ -93,8 +103,61 @@ namespace First_Partial_GUI.Classes
                 }
             }
             float score = ((float)correctCount / 5) * 100;
-            sentence = "¡Felicidades! Obtuviste " + correctCount + " preguntas correctas." + " Tú calificación final es de " + score.ToString() + ". ¡Buen trabajo!";
+            sentence = "¡Felicidades! Obtuviste " + correctCount + " pregunta(s) correcta(s).\n";
+            sentence += "\nTú calificación es de " + score.ToString() + gradeScore((int)score);
             return sentence;
+        }
+
+        private static string gradeScore(int score)
+        {
+            if (score == 100) { return ". ¡Excelente trabajo!\n"; }
+            else if (score == 80) { return ". ¡Muy buen trabajo!\n"; }
+            else if (score == 60) { return ". ¡Buen trabajo!\n"; }
+            else if (score == 40) { return ". Bien hecho, pero hay detalles que contemplar.\n"; }
+            else if (score == 20) { return ". Hay que estudiar un poco más la teoría.\n"; }
+            else { return ". ¡No leíste la teoría! Hay mucho que estudiar.\n"; }
+        }
+
+        public static string suggestTopics()
+        {
+            List <int> improve = new List<int>();
+            string temp = "";
+            string sentence = "";
+
+            for (int i = 0; i < correctFinals.Length; i++)
+            {
+                if (correctFinals[i] == false)
+                {
+                    improve.Add(i + 1);
+                }
+            }
+
+            for (int j = 0; j < improve.Count; j++)
+            {
+                if (j == improve.Count - 1)
+                {
+                    temp += improve[j].ToString() + " (" + topics[improve[j] - 1] + ")";
+                }
+                else if (j == improve.Count - 2)
+                {
+                    temp += improve[j].ToString() + " (" + topics[improve[j] - 1] + ")" + " y ";
+                }
+                else
+                {
+                    temp += improve[j].ToString() + " (" + topics[improve[j] - 1] + ")" + ", ";
+                }
+            }
+
+            if (improve.Count == 0)
+            {
+                return "";
+            }
+            else
+            {
+                sentence = "\nTuviste la(s) pregunta(s) " + temp + " incorrecta(s).\n";
+                sentence += "\nRegresa a la sección de teoría para reforzar estos conceptos.";
+                return sentence;
+            }
         }
     }
 }
